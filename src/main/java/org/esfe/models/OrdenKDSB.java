@@ -3,7 +3,7 @@ package org.esfe.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDate; 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
