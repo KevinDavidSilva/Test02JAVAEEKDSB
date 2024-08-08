@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IDetalleOrdenService {
-    Page<DetalleOrdenKDSB> buscarTodosPaginados(Pageable pageable);
-
     List<DetalleOrdenKDSB> obtenerTodos();
 
-    Optional<DetalleOrdenKDSB> buscarPorId(Integer id);
+    Page<DetalleOrdenKDSB> buscarTodosPaginados(Pageable pageable);
 
-    DetalleOrdenKDSB crearOEditar(DetalleOrdenKDSB detalleorden);
+    DetalleOrdenKDSB buscarPorId(Integer id);
+
+    DetalleOrdenKDSB crearOEditar(DetalleOrdenKDSB detalleOrden);
 
     void eliminarPorId(Integer id);
 
