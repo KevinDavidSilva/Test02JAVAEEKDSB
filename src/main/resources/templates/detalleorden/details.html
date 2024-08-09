@@ -1,0 +1,30 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Detalles del Detalle de Orden</h1>
+    <div>
+        <hr />
+        <dl class="row">
+
+
+            <dt class="col-sm-2">Orden</dt>
+            <dd class="col-sm-10" th:text="${detalleOrden.orden.fecha}"></dd>
+
+            <dt class="col-sm-2">Producto</dt>
+            <dd class="col-sm-10" th:text="${detalleOrden.producto.nombreKDSB}"></dd>
+
+            <dt class="col-sm-2">Cantidad</dt>
+            <dd class="col-sm-10" th:text="${detalleOrden.cantidadKDSB}"></dd>
+
+            <dt class="col-sm-2">Precio</dt>
+            <dd class="col-sm-10" th:text="${detalleOrden.precioKDSB}"></dd>
+        </dl>
+
+        <a th:href="@{/detalleorden/edit/{id} (id = ${detalleOrden.id})}" class="btn btn-outline-info">Editar</a> |
+        <a th:href="@{/detalleorden}">Regresar</a>
+    </div>
+</div>
+</html>

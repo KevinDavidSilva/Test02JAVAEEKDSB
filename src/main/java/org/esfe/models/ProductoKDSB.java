@@ -15,8 +15,17 @@ public class ProductoKDSB {
     @NotBlank(message = "El nombre es requerido")
     private String nombreKDSB;
 
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<DetalleOrdenKDSB> detallesOrden = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "detalleorden",
+            joinColumns = @JoinColumn(name = "id_productokdbs"),
+            inverseJoinColumns = @JoinColumn(name = "id_ordenkdsb")
+    )
+    private Set<OrdenKDSB> orden = new HashSet<>();
+
+//    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<DetalleOrdenKDSB> detallesOrden = new HashSet<>();
 
     // Getters y setters
 
@@ -36,11 +45,5 @@ public class ProductoKDSB {
         this.nombreKDSB = nombreKDSB;
     }
 
-    public Set<DetalleOrdenKDSB> getDetallesOrden() {
-        return detallesOrden;
-    }
 
-    public void setDetallesOrden(Set<DetalleOrdenKDSB> detallesOrden) {
-        this.detallesOrden = detallesOrden;
-    }
 }

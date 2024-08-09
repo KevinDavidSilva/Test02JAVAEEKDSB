@@ -10,11 +10,11 @@ public class DetalleOrdenKDSB {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "idOrdenKDSB")
+    @JoinColumn(name = "id_ordenkdsb", nullable = false)
     private OrdenKDSB orden;
 
     @ManyToOne
-    @JoinColumn(name = "idProductoKDSB")
+    @JoinColumn(name = "id_productokdbs", nullable = false)
     private ProductoKDSB producto;
 
     private Integer cantidadKDSB;
