@@ -23,8 +23,8 @@
         <tr th:each="producto : ${productos}">
             <td th:text="${producto.nombreKDSB}"></td>
             <td>
-                <a th:href="@{/productos/edit/{id}(id=${producto.id})}" class="btn btn-secondary">Editar</a>
-                <a th:href="@{/productos/remove/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
+                <a th:href="@{/productos/edit/{id}(id=${producto.id})}" class="btn btn-secondary">Editar</a> |
+                <a th:href="@{/productos/remove/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a> |
                 <a th:href="@{/productos/details/{id}(id=${producto.id})}" class="btn btn-info">Detalle</a>
             </td>
         </tr>

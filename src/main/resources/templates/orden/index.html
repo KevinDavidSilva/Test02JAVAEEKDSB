@@ -49,9 +49,9 @@
 
             <td th:text="${orden.fecha}"></td>
             <td>
-                <a th:href="@{/ordenes/details/{id}(id=${orden.id})}" class="btn btn-outline-secondary">Detalles</a> |
-                <a th:href="@{/ordenes/edit/{id}(id=${orden.id})}" class="btn btn-outline-info">Editar</a> |
-                <a th:href="@{/ordenes/remove/{id}(id=${orden.id})}" class="btn btn-outline-danger">Eliminar</a>
+                <a th:href="@{/ordenes/details/{id}(id=${orden.id})}" class="btn btn-secondary">Detalles</a> |
+                <a th:href="@{/ordenes/edit/{id}(id=${orden.id})}" class="btn btn-info">Editar</a> |
+                <a th:href="@{/ordenes/remove/{id}(id=${orden.id})}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>

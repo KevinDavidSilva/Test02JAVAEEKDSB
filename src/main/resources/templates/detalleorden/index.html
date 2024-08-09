@@ -47,9 +47,9 @@
             <td th:text="${item.cantidadKDSB}"></td>
             <td th:text="${item.precioKDSB}"></td>
             <td>
-                <a th:href="@{/detalleorden/details/{id}(id=${item.id})}" class="btn btn-outline-secondary">Detalles</a> |
-                <a th:href="@{/detalleorden/edit/{id}(id=${item.id})}" class="btn btn-outline-info">Editar</a> |
-                <a th:href="@{/detalleorden/remove/{id}(id=${item.id})}" class="btn btn-outline-danger">Eliminar</a>
+                <a th:href="@{/detalleorden/details/{id}(id=${item.id})}" class="btn btn-secondary">Detalles</a> |
+                <a th:href="@{/detalleorden/edit/{id}(id=${item.id})}" class="btn btn-info">Editar</a> |
+                <a th:href="@{/detalleorden/remove/{id}(id=${item.id})}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>
