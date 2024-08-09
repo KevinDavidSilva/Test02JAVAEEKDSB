@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<head>
+    <title>Crear Producto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<div layout:fragment="content">
+    <h1>Crear nuevo producto</h1>
+    <form th:action="@{/productos/save}" th:object="${producto}" method="post">
+        <div class="form-group">
+            <label for="nombreKDSB">Nombre</label>
+            <input type="text" class="form-control" th:field="*{nombreKDSB}" id="nombreKDSB" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('nombreKDSB')}" th:errors="*{nombreKDSB}"></div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Guardar</button> |
+        <a th:href="@{/productos}" class="btn btn-secondary">Regresar</a>
+    </form>
+</div>
+
+</html>

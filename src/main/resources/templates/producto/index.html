@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<head>
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<div layout:fragment="content">
+    <h1>Lista de Productos</h1>
+    <a th:href="@{/productos/create}" class="btn btn-outline-primary mb-3">Nuevo Producto</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="producto : ${productos}">
+            <td th:text="${producto.nombreKDSB}"></td>
+            <td>
+                <a th:href="@{/productos/edit/{id}(id=${producto.id})}" class="btn btn-secondary">Editar</a>
+                <a th:href="@{/productos/remove/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
+                <a th:href="@{/productos/details/{id}(id=${producto.id})}" class="btn btn-info">Detalle</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</html>

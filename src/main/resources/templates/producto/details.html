@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<head>
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<div layout:fragment="content">
+    <h1>Detalles del producto</h1>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">Nombre</dt>
+            <dd class="col-sm-10" th:text="${producto.nombreKDSB}"></dd>
+        </dl>
+
+        <a th:href="@{|/productos/edit/${producto.id}|}" class="btn btn-outline-info">Editar</a> |
+        <a th:href="@{/productos}" class="btn btn-outline-secondary">Regresar</a>
+    </div>
+</div>
+
+</html>
