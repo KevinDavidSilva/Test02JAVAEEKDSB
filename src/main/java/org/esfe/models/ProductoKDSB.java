@@ -2,7 +2,6 @@ package org.esfe.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +15,10 @@ public class ProductoKDSB {
     @NotBlank(message = "El nombre es requerido")
     private String nombreKDSB;
 
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<DetalleOrdenKDSB> detallesOrden = new HashSet<>();
+
+    // Getters y setters
 
     public Integer getId() {
         return id;
@@ -25,11 +27,12 @@ public class ProductoKDSB {
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getNombreKDSB() {
         return nombreKDSB;
     }
 
-    public void setNombreKDSB(String nombreMABT) {
+    public void setNombreKDSB(String nombreKDSB) {
         this.nombreKDSB = nombreKDSB;
     }
 

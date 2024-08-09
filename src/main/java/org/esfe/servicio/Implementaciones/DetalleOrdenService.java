@@ -10,9 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
-public class DetalleOrdenService implements IDetalleOrdenService{
+public class DetalleOrdenService implements IDetalleOrdenService {
     @Autowired
     private IDetalleOrdenRepository detalleOrdenRepository;
 
@@ -23,13 +22,12 @@ public class DetalleOrdenService implements IDetalleOrdenService{
 
     @Override
     public Page<DetalleOrdenKDSB> buscarTodosPaginados(Pageable pageable) {
-        return detalleOrdenRepository.findByOrderByDesc(pageable);
+        return detalleOrdenRepository.findAllByOrderByIdDesc(pageable);
     }
 
     @Override
-    public DetalleOrdenKDSB buscarPorId(Integer id)
-    {
-        return detalleOrdenRepository.findById(id).get();
+    public DetalleOrdenKDSB buscarPorId(Integer id){
+        return detalleOrdenRepository.findById(id).orElse(null);
     }
 
     @Override

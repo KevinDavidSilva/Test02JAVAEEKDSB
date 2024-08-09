@@ -1,12 +1,6 @@
 package org.esfe.models;
 
-
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "detalleorden")
@@ -16,22 +10,18 @@ public class DetalleOrdenKDSB {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "idOrdenKDSB", nullable = false)
-    @NotNull(message = "La orden es requerida")
+    @JoinColumn(name = "idOrdenKDSB")
     private OrdenKDSB orden;
 
     @ManyToOne
-    @JoinColumn(name = "idProductoKDBS", nullable = false)
-    @NotNull(message = "El producto es requerido")
+    @JoinColumn(name = "idProductoKDSB")
     private ProductoKDSB producto;
 
-    @NotNull(message = "La cantidad es requerida")
     private Integer cantidadKDSB;
-
-    @NotNull(message = "El precio es requerido")
     private Double precioKDSB;
 
     // Getters y setters
+
     public Long getId() {
         return id;
     }

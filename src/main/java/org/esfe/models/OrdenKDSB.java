@@ -1,8 +1,6 @@
 package org.esfe.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,13 +13,13 @@ public class OrdenKDSB {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "La fecha es requerida")
     private LocalDate fecha;
 
-    @OneToMany(mappedBy = "orden")
+    @OneToMany(mappedBy = "orden", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<DetalleOrdenKDSB> detallesOrden = new HashSet<>();
 
     // Getters y setters
+
     public Long getId() {
         return id;
     }
